@@ -1,4 +1,14 @@
-# 因子分析
+pfa.lite <- function(datafile)
+{
+  dat <- read.table(datafile)
+  res <- pfa(dat)
+  printf("\n*** factor loadings\n\n")
+  print(res$after.rotation.fl)
+  printf("\n\n*** factor score\n\n")
+  print(res$scores)
+}
+
+
 pfa <- function(dat,
     method=c("Varimax", "Biquartimax", "Quartimax", "Equimax", "None"),
     eps1=1e-5,
