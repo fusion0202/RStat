@@ -16,8 +16,8 @@ pop <- read.csv('pop1920-2010.csv', sep='\t', header=T)
 area <- read.csv('area47.csv', sep=',', header=F)
 pop <- pop[-1]
 area <- area[-1]
-area <- rep(area, times=7)
+area <- rep(area, times=8)
 pop <- pop/area
 res <- apply(pop, 2, gini.coef)
-year <- c(1920, 1945, 1965, 1970, 1995, 2005, 2010)
+year <- c(1920, 1935, 1945, 1965, 1970, 1995, 2005, 2010)
 plot(year, res, ylim=c(0.3,0.7), ylab='Gini Coefficient', las=1, type='b')
