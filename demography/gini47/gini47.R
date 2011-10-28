@@ -12,12 +12,13 @@ gini.coef <- function(x)
 }
 
 
-pop <- read.csv('pop1920-2010.csv', sep='\t', header=T)
-area <- read.csv('area47.csv', sep=',', header=F)
+pop <- read.csv('pop1920-2010.csv', sep='\t', header=F)
 pop <- pop[-1]
+year <- unlist(head(pop, 1))
+pop <- tail(pop, 47)
+area <- read.csv('area47.csv', sep=',', header=F)
 area <- area[-1]
-area <- rep(area, times=8)
+area <- rep(area, times=length(year))
 pop <- pop/area
 res <- apply(pop, 2, gini.coef)
-year <- c(1920, 1935, 1945, 1965, 1970, 1995, 2005, 2010)
 plot(year, res, ylim=c(0.3,0.7), ylab='Gini Coefficient', las=1, type='b')
