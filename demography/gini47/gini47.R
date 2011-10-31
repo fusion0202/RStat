@@ -12,7 +12,7 @@ gini.coef <- function(x)
 }
 
 
-pop <- read.csv('pop1920-2010.csv', sep='\t', header=F)
+pop <- read.csv('p1920-2005.csv', sep=',', header=F)
 pop <- pop[-1]
 year <- unlist(head(pop, 1))
 pop <- tail(pop, 47)
