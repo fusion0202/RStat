@@ -21,4 +21,8 @@ area <- area[-1]
 area <- rep(area, times=length(year))
 pop <- pop/area
 res <- apply(pop, 2, gini.coef)
-plot(year, res, ylim=c(0.3,0.7), ylab='Gini Coefficient', las=1, type='b')
+par(las=1, mgp=c(2.5,0.8,0))
+plot(year, res,  ylim=c(0.3,0.7), ylab='Gini Coefficient',type='n')
+abline(v=1945, col='gray')
+points(year,res, pch=19, col='red')
+lines(year, res, col='red')
