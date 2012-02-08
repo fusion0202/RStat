@@ -1,4 +1,4 @@
-https.csv <- function(url, header=F){  
+hts.csv <- function(url, header=F){  
   require(RCurl)
   text1 <- getURL(url, ssl.verifypeer = FALSE)
   text2 <- unlist(strsplit(text1, "\n"))
