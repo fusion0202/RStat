@@ -8,3 +8,7 @@ g = g + opts(title = "日本の合計特殊出生率（1947～2010）")
 g = g + xlab("year") + ylab("fertility rate")
 g = g + ylim(c(0, 5))
 print(g)
+
+library(RCurl)
+eval(parse(text = getURL("https://raw.github.com/fusion0202/RStat/master/ggplot2_demo.R", ssl.verifypeer = FALSE)))
+
