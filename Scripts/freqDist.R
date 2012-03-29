@@ -21,7 +21,7 @@ freqDist <- function(x, w, brk = w, percent=FALSE)
   } else {
     g <- ggplot(pdata, aes(mid, freq)) 
   }
-  g <- g + geom_bar(stat = "identity", fill="#4040FF")
+  g <- g + geom_bar(stat = "identity", fill="#808080")
   g <- g + scale_x_continuous(breaks = seq(start, end, by=brk))
   g <- g + labs(x="", y="")
   print(g)
