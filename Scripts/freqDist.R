@@ -1,31 +1,34 @@
-freqDist <- function(x, w, brk = w, percent=FALSE)
+freqDist <- function(x, bin, int = bin, relative=FALSE)
 {
   require(ggplot2)
-
+  
   x <- x[!is.na(x)]
-  y <- floor(x/w)
-  mn <- min(y)
-  mx <- max(y)
-  y <- y - mn + 1
-  dt <- data.frame(table(factor(y, levels=1:(mx-mn+1))))
-  names(dt) <- c("x", "freq")
-  dt$x <- mn : mx * w
-  pcnt = dt$freq/sum(dt$freq)*100
+  dy <- floor(x / bin)
+  mn <- min(dy)
+  mx <- max(dy)
+  dy <- dy - mn + 1
+  df <- data.frame(table(factor(dy, levels = 1:(mx - mn + 1))))
+  names(df) <- c("range", "freq")
+  df$range <- mn:mx * bin
+  pcnt = df$freq / sum(df$freq) * 100
   cum.pcnt = cumsum(pcnt)
-  mid =dt$x + w/2
-  pdata <- data.frame(dt, pcnt, cum.pcnt, mid)
-  start <- dt$x[1]
-  end <- start + length(dt$x)*w
-  if(percent){
-    g <- ggplot(pdata, aes(mid, pcnt))
+  ret <- data.frame(df, pcnt, cum = cum.pcnt)
+
+
+  start <- df$range[1]
+  end <- start + length(df$range) * bin
+
+  pdata <- data.frame(x)
+
+  if (relative) {
+    g <- ggplot(pdata, aes(x = x, y = ..count.. / sum(..count..)))
   } else {
-    g <- ggplot(pdata, aes(mid, freq)) 
+    g <- ggplot(pdata, aes(x))
   }
-  g <- g + geom_bar(stat = "identity", fill="#808080")
-  g <- g + scale_x_continuous(breaks = seq(start, end, by=brk))
+  g <- g + geom_histogram(binwidth = bin, fill = "#8080B0")
+  g <- g + scale_x_continuous(breaks = seq(start, end, by = int), expand = c(0, 0))
   g <- g + labs(x="", y="")
   print(g)
-
-  return(pdata[,colnames(pdata) != "mid"])
+  
+  return(ret)
 }
- 
