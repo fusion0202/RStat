@@ -1,6 +1,16 @@
 choropleth <- function(shape, rank, legend, title = ""){
   require(ggplot2)
+  rank <- rank - 1
   df <- fortify(spCbind(shape, rank), region = "rank")
+
+  for(i in 0:(max(rank) - min(rank))){
+    if(sum(rank == i) == 0 ){
+      dummy <- df[1,]
+      dummy$id <- "i"
+      df <- rbind(df, dummy)
+    }
+  }
+
   map <- ggplot(df)
   map <- map + aes(long,lat, group = group)
   map <- map + geom_polygon(aes(fill = id))
@@ -15,8 +25,8 @@ choropleth <- function(shape, rank, legend, title = ""){
     opts(axis.ticks = theme_blank(), 
          axis.text.x =  theme_blank(),
          axis.text.y =  theme_blank()) 
-  map <- map + opts(legend.position = c(0.95, 0.40),
-                    legend.justification = c(1, 1),
+  map <- map + opts(legend.position = c(0.99, 0.01),
+                    legend.justification = c("right", "bottom"),
                     legend.background = theme_rect(fill = "white", colour = "white"),
                     legend.key=theme_rect(fill = "white", colour = "white"))
   print(map)
