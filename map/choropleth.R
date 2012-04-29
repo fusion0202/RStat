@@ -1,9 +1,9 @@
 choropleth <- function(shape, rank, legend, title = ""){
   require(ggplot2)
-  rank <- rank - 1
+  %rank <- rank - 1
   df <- fortify(spCbind(shape, rank), region = "rank")
 
-  for(i in 0:(max(rank) - min(rank))){
+  for(i in 1:(max(rank) - min(rank) + 1)){
     if(sum(rank == i) == 0 ){
       dummy <- df[1,]
       dummy$id <- "i"
