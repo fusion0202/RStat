@@ -1,48 +1,48 @@
-PREF_CODE	PREF	PREFE	POPJ09	HD09
-1	北海道	Hokkaido	5506	8728
-2	青森県	Aomori	1380	2474
-3	岩手県	Iwate	1335	2636
-4	宮城県	Miyagi	2336	3292
-5	秋田県	Akita	1093	2148
-6	山形県	Yamagata	1172	2183
-7	福島県	Fukushima	2031	3860
-8	茨城県	Ibaraki	2929	4394
-9	栃木県	Tochigi	1983	3167
-10	群馬県	Gumma	1976	3142
-11	埼玉県	Saitama	7074	8655
-12	千葉県	Chiba	6104	8344
-13	東京都	Tokyo	12746	15389
-14	神奈川県	Kanagawa	8880	9629
-15	新潟県	Niigata	2373	3814
-16	富山県	Toyama	1085	1566
-17	石川県	Ishikawa	1160	1752
-18	福井県	Fukui	798	1392
-19	山梨県	Yamanashi	854	1347
-20	長野県	Nagano	2129	3456
-21	岐阜県	Gifu	2049	3147
-22	静岡県	Shizuoka	3711	5125
-23	愛知県	Aichi	7234	8047
-24	三重県	Mie	1826	2715
-25	滋賀県	Shiga	1384	1834
-26	京都府	Kyoto	2594	3984
-27	大阪府	Osaka	8685	11711
-28	兵庫県	Hyogo	5509	7520
-29	奈良県	Nara	1395	2205
-30	和歌山県	Wakayama	1003	1985
-31	鳥取県	Tottori	588	1078
-32	島根県	Shimane	717	1421
-33	岡山県	Okayama	1930	2850
-34	広島県	Hiroshima	2831	4430
-35	山口県	Yamaguchi	1447	2804
-36	徳島県	Tokushima	786	1347
-37	香川県	Kagawa	992	1882
-38	愛媛県	Ehime	1430	2943
-39	高知県	Kochi	766	1584
-40	福岡県	Fukuoka	5024	5584
-41	佐賀県	Saga	849	1256
-42	長崎県	Nagasaki	1427	2401
-43	熊本県	Kumamoto	1813	2889
-44	大分県	Oita	1192	1892
-45	宮崎県	Miyazaki	1134	2049
-46	鹿児島県	Kagoshima	1707	3059
-47	沖縄県	Okinawa	1377	1437
+PREF_CODE	PREF	PREFE	POPJ09	HD09	Sui09
+1	北海道	Hokkaido	5506	8728	1439
+2	青森県	Aomori	1380	2474	476
+3	岩手県	Iwate	1335	2636	459
+4	宮城県	Miyagi	2336	3292	577
+5	秋田県	Akita	1093	2148	416
+6	山形県	Yamagata	1172	2183	321
+7	福島県	Fukushima	2031	3860	591
+8	茨城県	Ibaraki	2929	4394	729
+9	栃木県	Tochigi	1983	3167	549
+10	群馬県	Gumma	1976	3142	538
+11	埼玉県	Saitama	7074	8655	1720
+12	千葉県	Chiba	6104	8344	1326
+13	東京都	Tokyo	12746	15389	2862
+14	神奈川県	Kanagawa	8880	9629	1908
+15	新潟県	Niigata	2373	3814	711
+16	富山県	Toyama	1085	1566	293
+17	石川県	Ishikawa	1160	1752	254
+18	福井県	Fukui	798	1392	191
+19	山梨県	Yamanashi	854	1347	222
+20	長野県	Nagano	2129	3456	526
+21	岐阜県	Gifu	2049	3147	473
+22	静岡県	Shizuoka	3711	5125	804
+23	愛知県	Aichi	7234	8047	1512
+24	三重県	Mie	1826	2715	425
+25	滋賀県	Shiga	1384	1834	279
+26	京都府	Kyoto	2594	3984	571
+27	大阪府	Osaka	8685	11711	2079
+28	兵庫県	Hyogo	5509	7520	1239
+29	奈良県	Nara	1395	2205	272
+30	和歌山県	Wakayama	1003	1985	258
+31	鳥取県	Tottori	588	1078	150
+32	島根県	Shimane	717	1421	221
+33	岡山県	Okayama	1930	2850	401
+34	広島県	Hiroshima	2831	4430	668
+35	山口県	Yamaguchi	1447	2804	409
+36	徳島県	Tokushima	786	1347	166
+37	香川県	Kagawa	992	1882	205
+38	愛媛県	Ehime	1430	2943	332
+39	高知県	Kochi	766	1584	233
+40	福岡県	Fukuoka	5024	5584	1185
+41	佐賀県	Saga	849	1256	226
+42	長崎県	Nagasaki	1427	2401	329
+43	熊本県	Kumamoto	1813	2889	452
+44	大分県	Oita	1192	1892	295
+45	宮崎県	Miyazaki	1134	2049	337
+46	鹿児島県	Kagoshima	1707	3059	415
+47	沖縄県	Okinawa	1377	1437	383
