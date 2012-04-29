@@ -1,17 +1,17 @@
 choropleth <- function(shape, rank, legend, title = ""){
   require(ggplot2)
-  #rank <- rank - 1
+  rank <- rank - 1
   df <- fortify(spCbind(shape, rank), region = "rank")
 
-  for(i in 1:max(rank)){
+  for(i in 0:max(rank)){
     if(sum(rank == i) == 0 ){
       dummy <- df[1,]
-      dummy$id <- "i"
-      df2 <- rbind(df, dummy)
+      dummy$id <- i
+      df <- rbind(df, dummy)
     }
   }
 
-  map <- ggplot(df2)
+  map <- ggplot(df)
   map <- map + aes(long,lat, group = group)
   map <- map + geom_polygon(aes(fill = id))
   map <- map + scale_fill_manual(values = legend[[1]], name = legend[[3]],
