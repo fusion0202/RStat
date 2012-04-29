@@ -3,15 +3,15 @@ choropleth <- function(shape, rank, legend, title = ""){
   #rank <- rank - 1
   df <- fortify(spCbind(shape, rank), region = "rank")
 
-  for(i in 1:(max(rank) - min(rank) + 1)){
+  for(i in 1:max(rank)){
     if(sum(rank == i) == 0 ){
       dummy <- df[1,]
       dummy$id <- "i"
-      df <- rbind(df, dummy)
+      df2 <- rbind(df, dummy)
     }
   }
 
-  map <- ggplot(df)
+  map <- ggplot(df2)
   map <- map + aes(long,lat, group = group)
   map <- map + geom_polygon(aes(fill = id))
   map <- map + scale_fill_manual(values = legend[[1]], name = legend[[3]],
