@@ -14,7 +14,7 @@ choropleth <- function(shape, rank, legend, title = ""){
   map <- ggplot(df)
   map <- map + aes(long,lat, group = group)
   map <- map + geom_polygon(aes(fill = id))
-  map <- map + scale_fill_manual(values = legend[[1]], name = legend[[3]],
+  map <- map + scale_fill_manual(values = legend[[1]], 
                                  labels = legend[[2]])
   map <- map + geom_path(data = shape,
                          aes(long,lat, group = group),
@@ -28,6 +28,7 @@ choropleth <- function(shape, rank, legend, title = ""){
   map <- map + opts(legend.position = c(0.99, 0.01),
                     legend.justification = c("right", "bottom"),
                     legend.background = theme_rect(fill = "white", colour = "white"),
-                    legend.key=theme_rect(fill = "white", colour = "white"))
+                    legend.key=theme_rect(fill = "white", colour = "white"),
+		    legend.title=theme_blank())
   print(map)
 }
