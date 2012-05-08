@@ -1,4 +1,4 @@
-choropleth2 <- function(shape, rank, legend, title="", margin = 0){
+choropleth <- function(shape, rank, legend, title="", margin = 0){
   require(ggplot2)
   rank <- rank - 1
   df <- fortify(spCbind(shape, rank), region = "rank")
