@@ -1,4 +1,4 @@
-choropleth <- function(shape, rank, legend, title="", margin = 0){
+choropleth <- function(shape, rank, legend, title="", hmargin = 0, vmargin = 0){
   require(ggplot2)
   rank <- rank - 1
   df <- fortify(spCbind(shape, rank), region = "rank")
@@ -19,7 +19,8 @@ choropleth <- function(shape, rank, legend, title="", margin = 0){
   map <- map + geom_path(data = shape,
                          aes(long,lat, group = group),
                          colour = "#303030", size = I(0.10))
-  map <- map + xlim(shape@bbox[1], shape@bbox[3] + margin) + 
+  map <- map + xlim(shape@bbox[1], shape@bbox[3] + hmargin) +
+    ylim(shape@bbox[2] - vmargin, shape@bbox[4]) +
     opts(title = title) +
     labs(x = "", y = "") + coord_equal() + 
     opts(axis.ticks = theme_blank(), 
