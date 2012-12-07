@@ -1,4 +1,4 @@
-choropleth <- function(shape, rank, legend, title="", hmargin = 0, vmargin = 0){
+function(shape, rank, legend, title="", hmargin = 0, vmargin = 0){
   require(ggplot2)
   rank <- rank - 1
   df <- fortify(spCbind(shape, rank), region = "rank")
@@ -21,15 +21,15 @@ choropleth <- function(shape, rank, legend, title="", hmargin = 0, vmargin = 0){
                          colour = "#303030", size = I(0.10))
   map <- map + xlim(shape@bbox[1], shape@bbox[3] + hmargin) +
     ylim(shape@bbox[2] - vmargin, shape@bbox[4]) +
-    opts(title = title) +
+    labs(title = title) +
     labs(x = "", y = "") + coord_equal() + 
-    opts(axis.ticks = theme_blank(), 
-         axis.text.x =  theme_blank(),
-         axis.text.y =  theme_blank()) 
-  map <- map + opts(legend.position = c(0.99, 0.01),
+    theme(axis.ticks = element_blank(), 
+         axis.text.x =  element_blank(),
+         axis.text.y =  element_blank()) 
+  map <- map + theme(legend.position = c(0.99, 0.01),
                     legend.justification = c("right", "bottom"),
-                    legend.background = theme_rect(fill = "white", colour = "white"),
-                    legend.key=theme_rect(fill = "white", colour = "white"),
-                    legend.title=theme_blank())
+                    legend.background = element_rect(fill = "white", colour = "white"),
+                    legend.key=element_rect(fill = "white", colour = "white"),
+                    legend.title=element_blank())
   print(map)
 }
