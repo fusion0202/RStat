@@ -24,8 +24,7 @@ choropleth <- function(shape, rank, legend, title="", hmargin = 0, vmargin = 0){
     labs(title = title) +
     labs(x = "", y = "") + coord_equal() + 
     theme(axis.ticks = element_blank(), 
-         axis.text.x =  element_blank(),
-         axis.text.y =  element_blank()) 
+         axis.text =  element_blank()) 
   map <- map + theme(legend.position = c(0.99, 0.01),
                     legend.justification = c("right", "bottom"),
                     legend.background = element_rect(fill = "white", colour = "white"),
